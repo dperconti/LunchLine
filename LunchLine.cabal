@@ -48,6 +48,9 @@ library
 executable LunchLine-exe
   main-is: Main.hs
   other-modules:
+      Models
+      Run
+      Transformer.ReaderT
       Paths_LunchLine
   hs-source-dirs:
       app

@@ -11,7 +11,7 @@
 {-# LANGUAGE UndecidableInstances #-}
 {-# OPTIONS_GHC -Wno-name-shadowing #-}
 
-module Models.Models where
+module Models where
 
 import Database.Persist.TH
 

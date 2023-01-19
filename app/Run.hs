@@ -1,7 +1,11 @@
-{-# LANGUAGE TypeApplications #-}
+module Run where
 
-import Control.Monad.Logger
 import Data.List (foldl')
+import Control.Monad.Logger
+import Control.Monad.Reader
+import Database.Persist.Sqlite
+import Models
+import Transformer.ReaderT (AppT, Env (Env), runAppT, runDB)
 
 weeklyBudget :: Int
 weeklyBudget = 100
@@ -19,7 +23,7 @@ runApp = do
   let remainingBudget = foldl' spend weeklyBudget lineItems
   liftIO . putStrLn $ "Remaining Budget: " <> show remainingBudget
 
-main :: IO ()
-main = do
+run :: IO ()
+run = do
   env <- runStderrLoggingT $ Env <$> createSqlitePool ":memory:" 10
   runAppT runApp env
