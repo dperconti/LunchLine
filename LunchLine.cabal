@@ -30,9 +30,19 @@ library
       Paths_LunchLine
   hs-source-dirs:
       src
+  default-extensions:
+      OverloadedStrings
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , esqueleto
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-sqlite
+    , resource-pool
   default-language: Haskell2010
 
 executable LunchLine-exe
@@ -41,10 +51,20 @@ executable LunchLine-exe
       Paths_LunchLine
   hs-source-dirs:
       app
+  default-extensions:
+      OverloadedStrings
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       LunchLine
     , base >=4.7 && <5
+    , esqueleto
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-sqlite
+    , resource-pool
   default-language: Haskell2010
 
 test-suite LunchLine-test
@@ -54,8 +74,18 @@ test-suite LunchLine-test
       Paths_LunchLine
   hs-source-dirs:
       test
+  default-extensions:
+      OverloadedStrings
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       LunchLine
     , base >=4.7 && <5
+    , esqueleto
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-sqlite
+    , resource-pool
   default-language: Haskell2010

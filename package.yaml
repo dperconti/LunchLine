@@ -20,7 +20,18 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/githubuser/LunchLine#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.7 && < 5
+  - persistent
+  - persistent-sqlite
+  - mtl
+  - resource-pool
+  - monad-logger
+  - esqueleto
+
+default-extensions:
+  - OverloadedStrings
+  - DerivingStrategies
+  - GeneralizedNewtypeDeriving
 
 ghc-options:
 - -Wall
